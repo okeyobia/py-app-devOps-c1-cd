@@ -1,5 +1,5 @@
 # Use a specific uv image for the build stage
-FROM ghcr.io/astral-sh/uv:python3.11-slim AS builder
+FROM ghcr.io/astral-sh/uv:python3.11-trixie-slim AS builder
 
 WORKDIR /app
 
