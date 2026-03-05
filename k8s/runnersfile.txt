@@ -1,0 +1,11 @@
+cat <<EOF | kubectl apply -n actions-runner-system -f -     
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: example-runnerdeploy
+spec:
+  replicas: 1
+  template:
+    spec:
+      repository: okeyobia/py-app-devOps-c1-cd
+EOF
