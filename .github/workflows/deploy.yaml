@@ -30,7 +30,7 @@ jobs:
       
       - name: Update Helm values
         run: |
-          sed -i 's/tag:.*/tag: "${{ env.SHORT_SHA }}"/' apps/fastapi/values.yaml
+          sed -i 's/tag:.*/tag: "${{ env.SHORT_SHA }}"/' ./fastapi-chart/values.yaml
 
       - name: Commit changes
         run: |
