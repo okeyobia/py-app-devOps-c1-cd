@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fastapi-python-app
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/okeyobia/py-app-devOps-c1-cd.git
+    targetRevision: main
+    path: fastapi-chart
+    helm:
+      valueFiles:
+        - values.yaml
+        - argo-cd/values-argocd.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: fastapi-uv
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
