@@ -37,19 +37,7 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "ci@github.com"
           git commit -am "Update image"
-          git push 
-  cd:
-    runs-on: self-hosted
-    steps:
-      - name: Argo CD Sync
-        uses: argoproj/argo-cd-action@v2
-        with:
-          argocd_server: ${{ secrets.ARGOCD_SERVER }}
-          argocd_token: ${{ secrets.ARGOCD_TOKEN }}
-          application_name: fastapi-python-app
-          operation_sync: true
-          operation_prune: true
-          operation_self_heal: true          
+          git push    
 
     #   - name: Deploy with Helm
     #     uses: azure/setup-kubectl@v3
