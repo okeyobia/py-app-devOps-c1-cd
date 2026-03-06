@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: okeyobia/python-fastapi-app
-  tag: "8148d538"
+  tag: "a6822907"
   pullPolicy: IfNotPresent
 
 service:
