@@ -27,6 +27,17 @@ jobs:
         run: |
           docker build -t $IMAGE_NAME:${{ env.SHORT_SHA }} .
           docker push $IMAGE_NAME:${{ env.SHORT_SHA }}
+      
+      - name: Update Helm values
+        run: |
+          sed -i 's/tag:.*/tag: "${{ env.SHORT_SHA }}"/' apps/fastapi/values.yaml
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "ci@github.com"
+          git commit -am "Update image"
+          git push    
 
     #   - name: Deploy with Helm
     #     uses: azure/setup-kubectl@v3
