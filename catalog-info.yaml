@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Python FastAPI Application
+  description: A simple Python FastAPI application deployed with Helm.
+  annotations:
+    github.com/project-slug: okeyobia/python-fastapi-app
+spec:
+  type: service
+  lifecycle: experimental
+  owner: devops-team
