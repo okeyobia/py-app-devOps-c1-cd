@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: Python FastAPI Application
-  description: A simple Python FastAPI application deployed with Helm.
+  name: python-fastapi-application   # lower-case slug, no spaces
+  title: Python FastAPI Application  # optional human-readable title
   annotations:
     github.com/project-slug: okeyobia/python-fastapi-app
 spec:
