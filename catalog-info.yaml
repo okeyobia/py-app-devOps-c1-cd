@@ -5,6 +5,7 @@ metadata:
   title: Python FastAPI Application  # optional human-readable title
   annotations:
     github.com/project-slug: okeyobia/python-fastapi-app
+    backstage.io/techdocs-ref: 'dir:./docs'
 spec:
   type: service
   lifecycle: experimental
